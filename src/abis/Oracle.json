@@ -1,0 +1,535 @@
+[
+  {
+    "name": "AggregatorProxyImpl",
+    "type": "impl",
+    "interface_name": "chainlink::ocr2::aggregator_proxy::IAggregatorProxy"
+  },
+  {
+    "name": "chainlink::ocr2::aggregator::Round",
+    "type": "struct",
+    "members": [
+      {
+        "name": "round_id",
+        "type": "core::felt252"
+      },
+      {
+        "name": "answer",
+        "type": "core::integer::u128"
+      },
+      {
+        "name": "block_num",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "started_at",
+        "type": "core::integer::u64"
+      },
+      {
+        "name": "updated_at",
+        "type": "core::integer::u64"
+      }
+    ]
+  },
+  {
+    "name": "chainlink::ocr2::aggregator_proxy::IAggregatorProxy",
+    "type": "interface",
+    "items": [
+      {
+        "name": "latest_round_data",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "chainlink::ocr2::aggregator::Round"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "round_data",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "round_id",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "chainlink::ocr2::aggregator::Round"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "description",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::felt252"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "decimals",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::integer::u8"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "latest_answer",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::integer::u128"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "name": "TypeAndVersion",
+    "type": "impl",
+    "interface_name": "chainlink::libraries::type_and_version::ITypeAndVersion"
+  },
+  {
+    "name": "chainlink::libraries::type_and_version::ITypeAndVersion",
+    "type": "interface",
+    "items": [
+      {
+        "name": "type_and_version",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::felt252"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "name": "UpgradeableImpl",
+    "type": "impl",
+    "interface_name": "chainlink::libraries::upgradeable::IUpgradeable"
+  },
+  {
+    "name": "chainlink::libraries::upgradeable::IUpgradeable",
+    "type": "interface",
+    "items": [
+      {
+        "name": "upgrade",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "new_impl",
+            "type": "core::starknet::class_hash::ClassHash"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      }
+    ]
+  },
+  {
+    "name": "AggregatorProxyInternal",
+    "type": "impl",
+    "interface_name": "chainlink::ocr2::aggregator_proxy::IAggregatorProxyInternal"
+  },
+  {
+    "name": "chainlink::ocr2::aggregator_proxy::IAggregatorProxyInternal",
+    "type": "interface",
+    "items": [
+      {
+        "name": "propose_aggregator",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "address",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "confirm_aggregator",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "address",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "proposed_latest_round_data",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "chainlink::ocr2::aggregator::Round"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "proposed_round_data",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "round_id",
+            "type": "core::felt252"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "chainlink::ocr2::aggregator::Round"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "aggregator",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "phase_id",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::integer::u128"
+          }
+        ],
+        "state_mutability": "view"
+      }
+    ]
+  },
+  {
+    "name": "OwnableImpl",
+    "type": "impl",
+    "interface_name": "openzeppelin::access::ownable::interface::IOwnableTwoStep"
+  },
+  {
+    "name": "openzeppelin::access::ownable::interface::IOwnableTwoStep",
+    "type": "interface",
+    "items": [
+      {
+        "name": "owner",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "pending_owner",
+        "type": "function",
+        "inputs": [],
+        "outputs": [
+          {
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "accept_ownership",
+        "type": "function",
+        "inputs": [],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "transfer_ownership",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "new_owner",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "renounce_ownership",
+        "type": "function",
+        "inputs": [],
+        "outputs": [],
+        "state_mutability": "external"
+      }
+    ]
+  },
+  {
+    "name": "AccessControlImpl",
+    "type": "impl",
+    "interface_name": "chainlink::libraries::access_control::IAccessController"
+  },
+  {
+    "name": "core::bool",
+    "type": "enum",
+    "variants": [
+      {
+        "name": "False",
+        "type": "()"
+      },
+      {
+        "name": "True",
+        "type": "()"
+      }
+    ]
+  },
+  {
+    "name": "chainlink::libraries::access_control::IAccessController",
+    "type": "interface",
+    "items": [
+      {
+        "name": "has_access",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "data",
+            "type": "core::array::Array::<core::felt252>"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::bool"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "has_read_access",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
+          },
+          {
+            "name": "data",
+            "type": "core::array::Array::<core::felt252>"
+          }
+        ],
+        "outputs": [
+          {
+            "type": "core::bool"
+          }
+        ],
+        "state_mutability": "view"
+      },
+      {
+        "name": "add_access",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "remove_access",
+        "type": "function",
+        "inputs": [
+          {
+            "name": "user",
+            "type": "core::starknet::contract_address::ContractAddress"
+          }
+        ],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "enable_access_check",
+        "type": "function",
+        "inputs": [],
+        "outputs": [],
+        "state_mutability": "external"
+      },
+      {
+        "name": "disable_access_check",
+        "type": "function",
+        "inputs": [],
+        "outputs": [],
+        "state_mutability": "external"
+      }
+    ]
+  },
+  {
+    "name": "constructor",
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "name": "address",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "kind": "struct",
+    "name": "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+    "type": "event",
+    "members": [
+      {
+        "kind": "key",
+        "name": "previous_owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "kind": "key",
+        "name": "new_owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "kind": "struct",
+    "name": "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+    "type": "event",
+    "members": [
+      {
+        "kind": "key",
+        "name": "previous_owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+        "kind": "key",
+        "name": "new_owner",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "kind": "enum",
+    "name": "openzeppelin::access::ownable::ownable::OwnableComponent::Event",
+    "type": "event",
+    "variants": [
+      {
+        "kind": "nested",
+        "name": "OwnershipTransferred",
+        "type": "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferred"
+      },
+      {
+        "kind": "nested",
+        "name": "OwnershipTransferStarted",
+        "type": "openzeppelin::access::ownable::ownable::OwnableComponent::OwnershipTransferStarted"
+      }
+    ]
+  },
+  {
+    "kind": "struct",
+    "name": "chainlink::libraries::access_control::AccessControlComponent::AddedAccess",
+    "type": "event",
+    "members": [
+      {
+        "kind": "key",
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "kind": "struct",
+    "name": "chainlink::libraries::access_control::AccessControlComponent::RemovedAccess",
+    "type": "event",
+    "members": [
+      {
+        "kind": "key",
+        "name": "user",
+        "type": "core::starknet::contract_address::ContractAddress"
+      }
+    ]
+  },
+  {
+    "kind": "struct",
+    "name": "chainlink::libraries::access_control::AccessControlComponent::AccessControlEnabled",
+    "type": "event",
+    "members": []
+  },
+  {
+    "kind": "struct",
+    "name": "chainlink::libraries::access_control::AccessControlComponent::AccessControlDisabled",
+    "type": "event",
+    "members": []
+  },
+  {
+    "kind": "enum",
+    "name": "chainlink::libraries::access_control::AccessControlComponent::Event",
+    "type": "event",
+    "variants": [
+      {
+        "kind": "nested",
+        "name": "AddedAccess",
+        "type": "chainlink::libraries::access_control::AccessControlComponent::AddedAccess"
+      },
+      {
+        "kind": "nested",
+        "name": "RemovedAccess",
+        "type": "chainlink::libraries::access_control::AccessControlComponent::RemovedAccess"
+      },
+      {
+        "kind": "nested",
+        "name": "AccessControlEnabled",
+        "type": "chainlink::libraries::access_control::AccessControlComponent::AccessControlEnabled"
+      },
+      {
+        "kind": "nested",
+        "name": "AccessControlDisabled",
+        "type": "chainlink::libraries::access_control::AccessControlComponent::AccessControlDisabled"
+      }
+    ]
+  },
+  {
+    "kind": "enum",
+    "name": "chainlink::ocr2::aggregator_proxy::AggregatorProxy::Event",
+    "type": "event",
+    "variants": [
+      {
+        "kind": "flat",
+        "name": "OwnableEvent",
+        "type": "openzeppelin::access::ownable::ownable::OwnableComponent::Event"
+      },
+      {
+        "kind": "flat",
+        "name": "AccessControlEvent",
+        "type": "chainlink::libraries::access_control::AccessControlComponent::Event"
+      }
+    ]
+  }
+]

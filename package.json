@@ -1,0 +1,80 @@
+{
+	"name": "web3-boilerplate",
+	"version": "0.1.4",
+	"author": "dmah",
+	"scripts": {
+		"start": "node ./start.js",
+		"build": "node ./build.js",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"prettier": "prettier --config .prettierrc \"**/*.{ts,tsx,js}\" --write"
+	},
+	"dependencies": {
+		"@ant-design/icons": "5.2.6",
+		"@coinbase/wallet-sdk": "3.7.2",
+		"@ethersproject/abi": "^5.7.0",
+		"@ethersproject/bignumber": "^5.7.0",
+		"@ethersproject/constants": "^5.7.0",
+		"@ethersproject/providers": "^5.7.2",
+		"@starknet-react/chains": "^0.1.7",
+		"@starknet-react/core": "^2.3.0",
+		"@walletconnect/ethereum-provider": "2.10.2",
+		"@web3-react/coinbase-wallet": "8.2.3",
+		"@web3-react/core": "8.2.3",
+		"@web3-react/injected-connector": "^6.0.7",
+		"@web3-react/metamask": "8.2.4",
+		"@web3-react/network": "8.2.3",
+		"@web3-react/types": "8.2.3",
+		"@web3-react/url": "8.2.3",
+		"@web3-react/walletconnect-v2": "8.5.1",
+		"antd": "5.10.0",
+		"buffer": "^6.0.3",
+		"ethers": "5.7.2",
+		"get-starknet-core": "^3.2.0",
+		"l0k_swap-sdk": "github:10k-swap/10k_swap-sdk#main",
+		"lodash": "^4.17.21",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-jazzicon": "1.0.4",
+		"react-redux": "^9.1.0",
+		"react-router-dom": "6",
+		"react-scripts": "5.0.1",
+		"sass": "^1.69.5",
+		"starknet": "^5.24.3",
+		"swr": "^2.2.5",
+		"tailwind-merge": "^2.2.0",
+		"zustand": "^4.5.1"
+	},
+	"devDependencies": {
+		"@babel/plugin-proposal-private-property-in-object": "7.21.11",
+		"@types/jest": "29.5.5",
+		"@types/lodash": "^4.14.202",
+		"@types/node": "20.8.6",
+		"@types/react": "18.2.28",
+		"@types/react-dom": "18.2.13",
+		"@typescript-eslint/eslint-plugin": "6.7.5",
+		"@typescript-eslint/parser": "6.7.5",
+		"big-integer": "^1.6.51",
+		"bignumber.js": "^9.1.1",
+		"dotenv": "16.3.1",
+		"eslint": "8.51.0",
+		"eslint-config-prettier": "9.0.0",
+		"eslint-config-react-app": "7.0.1",
+		"eslint-import-resolver-typescript": "3.6.1",
+		"eslint-plugin-import": "2.28.1",
+		"eslint-plugin-prettier": "5.0.1",
+		"eslint-plugin-react": "7.33.2",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"prettier": "3.0.3",
+		"rewire": "^6.0.0",
+		"typescript": "5.2.2"
+	},
+	"browserslist": {
+		"production": [
+			"defaults"
+		],
+		"development": [
+			"defaults"
+		]
+	}
+}

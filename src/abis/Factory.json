@@ -1,0 +1,427 @@
+[
+	{
+	  "name": "BrownAMMFactoryImpl",
+	  "type": "impl",
+	  "interface_name": "brown_amm::interfaces::factory::IBrownAMMFactory"
+	},
+	{
+	  "name": "core::bool",
+	  "type": "enum",
+	  "variants": [
+		{
+		  "name": "False",
+		  "type": "()"
+		},
+		{
+		  "name": "True",
+		  "type": "()"
+		}
+	  ]
+	},
+	{
+	  "name": "brown_amm::interfaces::factory::IBrownAMMFactory",
+	  "type": "interface",
+	  "items": [
+		{
+		  "name": "fee_to",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "fee_handler",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "oracle_of",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "token",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [
+			{
+			  "type": "(core::bool, core::starknet::contract_address::ContractAddress)"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "get_pair",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "tokenA",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			},
+			{
+			  "name": "tokenB",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [
+			{
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "price_of",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "token",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [
+			{
+			  "type": "core::integer::u128"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "get_fee",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::integer::u8"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "protocol_fee_on",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::bool"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "all_pairs",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "(core::integer::u32, core::array::Array::<core::starknet::contract_address::ContractAddress>)"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "all_pairs_length",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::integer::u32"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "class_hash_for_pair_contract",
+		  "type": "function",
+		  "inputs": [],
+		  "outputs": [
+			{
+			  "type": "core::starknet::class_hash::ClassHash"
+			}
+		  ],
+		  "state_mutability": "view"
+		},
+		{
+		  "name": "create_pair",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "tokenA",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			},
+			{
+			  "name": "tokenB",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [
+			{
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "state_mutability": "external"
+		},
+		{
+		  "name": "set_fee_to",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "fee_to",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [],
+		  "state_mutability": "external"
+		},
+		{
+		  "name": "set_fee",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "fee",
+			  "type": "core::integer::u8"
+			}
+		  ],
+		  "outputs": [],
+		  "state_mutability": "external"
+		},
+		{
+		  "name": "set_fee_handler",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "handler_address",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			}
+		  ],
+		  "outputs": [],
+		  "state_mutability": "external"
+		},
+		{
+		  "name": "set_oracle_of",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "token",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			},
+			{
+			  "name": "oracle",
+			  "type": "core::starknet::contract_address::ContractAddress"
+			},
+			{
+			  "name": "is_stable",
+			  "type": "core::bool"
+			}
+		  ],
+		  "outputs": [],
+		  "state_mutability": "external"
+		}
+	  ]
+	},
+	{
+	  "name": "UpgradableImpl",
+	  "type": "impl",
+	  "interface_name": "brown_amm::utils::upgradable::IUpgradable"
+	},
+	{
+	  "name": "brown_amm::utils::upgradable::IUpgradable",
+	  "type": "interface",
+	  "items": [
+		{
+		  "name": "upgrade",
+		  "type": "function",
+		  "inputs": [
+			{
+			  "name": "new_class_hash",
+			  "type": "core::starknet::class_hash::ClassHash"
+			}
+		  ],
+		  "outputs": [],
+		  "state_mutability": "external"
+		}
+	  ]
+	},
+	{
+	  "name": "constructor",
+	  "type": "constructor",
+	  "inputs": [
+		{
+		  "name": "fee_handler",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		},
+		{
+		  "name": "class_hash_pair_contract",
+		  "type": "core::starknet::class_hash::ClassHash"
+		},
+		{
+		  "name": "vault_class_hash",
+		  "type": "core::starknet::class_hash::ClassHash"
+		}
+	  ]
+	},
+	{
+	  "name": "set_pair_contract_class",
+	  "type": "function",
+	  "inputs": [
+		{
+		  "name": "class_hash_pair_contract",
+		  "type": "core::starknet::class_hash::ClassHash"
+		}
+	  ],
+	  "outputs": [],
+	  "state_mutability": "external"
+	},
+	{
+	  "name": "set_vault_contract_class",
+	  "type": "function",
+	  "inputs": [
+		{
+		  "name": "vault_class_hash",
+		  "type": "core::starknet::class_hash::ClassHash"
+		}
+	  ],
+	  "outputs": [],
+	  "state_mutability": "external"
+	},
+	{
+	  "name": "assert_paused",
+	  "type": "function",
+	  "inputs": [],
+	  "outputs": [],
+	  "state_mutability": "view"
+	},
+	{
+	  "name": "assert_not_paused",
+	  "type": "function",
+	  "inputs": [],
+	  "outputs": [],
+	  "state_mutability": "view"
+	},
+	{
+	  "name": "pause",
+	  "type": "function",
+	  "inputs": [],
+	  "outputs": [],
+	  "state_mutability": "external"
+	},
+	{
+	  "name": "unpause",
+	  "type": "function",
+	  "inputs": [],
+	  "outputs": [],
+	  "state_mutability": "external"
+	},
+	{
+	  "name": "toggle_protocol_fee",
+	  "type": "function",
+	  "inputs": [],
+	  "outputs": [],
+	  "state_mutability": "external"
+	},
+	{
+	  "kind": "struct",
+	  "name": "brown_amm::factory::BrownAMMFactory::PairCreated",
+	  "type": "event",
+	  "members": [
+		{
+		  "kind": "key",
+		  "name": "tokenA",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		},
+		{
+		  "kind": "key",
+		  "name": "tokenB",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		},
+		{
+		  "kind": "data",
+		  "name": "pair",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		}
+	  ]
+	},
+	{
+	  "kind": "struct",
+	  "name": "brown_amm::factory::BrownAMMFactory::SetPairFee",
+	  "type": "event",
+	  "members": [
+		{
+		  "kind": "key",
+		  "name": "pair",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		},
+		{
+		  "kind": "key",
+		  "name": "stable",
+		  "type": "core::bool"
+		},
+		{
+		  "kind": "data",
+		  "name": "fee",
+		  "type": "core::integer::u8"
+		}
+	  ]
+	},
+	{
+	  "kind": "struct",
+	  "name": "brown_amm::factory::BrownAMMFactory::Paused",
+	  "type": "event",
+	  "members": [
+		{
+		  "kind": "data",
+		  "name": "account",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		}
+	  ]
+	},
+	{
+	  "kind": "struct",
+	  "name": "brown_amm::factory::BrownAMMFactory::Unpaused",
+	  "type": "event",
+	  "members": [
+		{
+		  "kind": "data",
+		  "name": "account",
+		  "type": "core::starknet::contract_address::ContractAddress"
+		}
+	  ]
+	},
+	{
+	  "kind": "enum",
+	  "name": "brown_amm::factory::BrownAMMFactory::Event",
+	  "type": "event",
+	  "variants": [
+		{
+		  "kind": "nested",
+		  "name": "PairCreated",
+		  "type": "brown_amm::factory::BrownAMMFactory::PairCreated"
+		},
+		{
+		  "kind": "nested",
+		  "name": "SetPairFee",
+		  "type": "brown_amm::factory::BrownAMMFactory::SetPairFee"
+		},
+		{
+		  "kind": "nested",
+		  "name": "Paused",
+		  "type": "brown_amm::factory::BrownAMMFactory::Paused"
+		},
+		{
+		  "kind": "nested",
+		  "name": "Unpaused",
+		  "type": "brown_amm::factory::BrownAMMFactory::Unpaused"
+		}
+	  ]
+	}
+  ]
